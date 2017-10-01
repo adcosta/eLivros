@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>eLivros - a minha biblioteca</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link type="text/css" rel="stylesheet" href="css/estilo.css">
+        <script type="text/javascript" src='https://code.jquery.com/jquery-3.2.1.min.js'> </script> 
+        <script type="text/javascript" src="js/o-meu-javascript.js"> </script> 
+    </head>
+    <body>
+        <!-- -->
+        <div id="topo">
+            <h1>eLivros: A minha biblioteca</h1>
+            <p id="linha2" class="fundo_azul" onclick="mudaCor()">eLivros: Web app para gerir livros</p>            
+        </div>
+        <div id="seccao1">
+            <h2>Menu</h2>
+            <ul>
+                <li>Informatica (26 livros)</li>
+                <li>Culinária (33 livros)</li>
+                <li>Outros (100 livros)</li>
+            </ul>
+            <h2>E ainda</h2>
+            <ol>
+                <li>Para comprar</li>
+                <li>Empréstimos</li>
+            </ol>
+        </div>
+        <div id="seccao2">
+            <h2>Livros</h2>
+            <p>Lista de Livros</p>
+                <form>
+                        <input type="button" value="Actualiza Listagem" onclick="listaLivros()">
+                        <table id="tabela_livros">
+                                <thead>
+                                    <tr><th>id</th> <th>Título</th> <th>Autor</th> <th></th> </tr>
+                                </thead>
+                                <tbody>  </tbody>
+                                <tfoot>
+                                        <tr>
+                                                <td><input type="text" name="id" id="id"> 
+                                                    <input type="button" value="Procura" onclick="obtemLivro()"></td>
+                                                <td><input type="text" name="titulo" id="titulo"></td>
+                                                <td><input type="text" name="autor" id="autor"></td>
+                                                <td><input type="button" value="Adiciona" onclick="adicionaLivro()"></td>
+                                        </tr>
+                                </tfoot>
+                        </table>
+                        <p id="avisos" class="aviso"></p>
+                        <p id="debug" class="debug"></p>
+                </form>
+            
+        </div>
+        <div id="rodape">
+            <br>
+            <p class="fundo_azul">  &nbsp; </p>            
+            <img alt="Simbolo da Universidade do Minho" src="https://www.uminho.pt/_layouts/15/UMinho.PortalUM.UI/images/portal-logo.png">
+            <a href="https://www.uminho.pt/PT"> @ UMINHO</a>
+        </div>
+    </body>
+</html>

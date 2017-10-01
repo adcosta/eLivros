@@ -1,0 +1,35 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Sep 27, 2017, 11:33:29 PM
+    Author     : costa
+*/
+
+h1, h2, h3 { text-align: center; color: brown}
+
+/* estilo para as tabelas */
+table, tr, th, td {  border:1px solid green; }
+table { width:100%; border-collapse:collapse;}
+th { background-color:#A7C942; color:#ffffff;}
+
+p.fundo_azul {background-color: lightblue; font-size:18px}
+p.fundo_amarelo {background-color: lightyellow; font-size:18px}
+.aviso {background-color: orangered; color: yellow; font-size:18px}
+
+#seccao1 {
+   left:20px;
+   width:250px;
+   background-color: lightgrey; 
+   float: left;
+} 
+
+#seccao2 {
+   left: 30px;
+   padding-left: 30px;
+   float: left;
+} 
+
+#rodape {clear: both;}
