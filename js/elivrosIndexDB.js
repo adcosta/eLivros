@@ -51,13 +51,13 @@ window.onload = function () {
     }
 
     // Abrir a base de dados... elivros
-    var DBOpenRequest = window.indexedDB.open("eLivros", 4);
+    var DBOpenRequest = window.indexedDB.open("eLivros", 1);
 
     // Vamos definir dois handlers para os eventos de sucesso e insucesso
     DBOpenRequest.onerror = function (event) {
         msgErro("Erro a abrir a base de dados de livros");
     };
-
+    
     DBOpenRequest.onsuccess = function (event) {
         msgDebug("Base de dados de livros acessivel...");
         // guardar o resultado na variavel 'dbLivros' para usar mais tarde
@@ -81,13 +81,20 @@ window.onload = function () {
         var objectStore = db.createObjectStore("eLivros", {keyPath: "id"});
         objectStore.createIndex("autor", "autor", {unique: false});
         objectStore.createIndex("titulo", "titulo", {unique: false});
-
+  
         // insere alguns dados na BD... qiando a criação da DB terminar...
         objectStore.transaction.oncomplete = function (event) {
-            var transaction = dbLivros.transaction(["eLivros"], "readwrite");
+            var transaction = db.transaction(["eLivros"], "readwrite");
             var elivrosObjectStore = transaction.objectStore('eLivros');
+            console.log("Database nova foi criada... com sucesso");
+            console.log(elivrosObjectStore.indexNames);
+            console.log(elivrosObjectStore.keyPath);
+            console.log(elivrosObjectStore.name);
+            console.log(elivrosObjectStore.transaction);
+            console.log(elivrosObjectStore.autoIncrement);
             for (var i in eBibliotecaBase) {
                 elivrosObjectStore.add(eBibliotecaBase[i]);
+                console.log("Adiciona registo: " + JSON.stringify(eBibliotecaBase[i]));
             }
         };
         // e avisa que está tudo bem...
@@ -102,7 +109,6 @@ window.onload = function () {
  */
 function acrescentaLivroTabela(eLivro) {
     var tabela = $("#tabela_livros tbody");
-    console.log(JSON.stringify(eLivro))
     $('<tr></tr>')
             .append('<td>' + eLivro.id + '</td>')
             .append('<td>' + eLivro.titulo + '</td>')
