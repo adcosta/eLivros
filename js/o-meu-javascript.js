@@ -15,20 +15,24 @@ function mudaCor() {
     }
 }
 
+/*
+ * Funções auxiliares para mostrar mensagens de erro e de debug...
+ *  - v1.0 apenas mostra a mensagem com um estilo próprio durante 10 segundos
+ */
 function msgErro(txt) {
     // coloca mensagem de erro no parágrafo de avisos...
     $(avisos).text(txt);
-    // limpa mensagem daqui a 12 segundos...
+    // limpa mensagem daqui a 10 segundos...
     setTimeout(function () {
         $(avisos).empty();
-    }, 12000);
+    }, 10000);
 }
 
 function msgDebug(txt) {
     $(debug).text(txt);
     setTimeout(function () {
         $(debug).empty();
-    }, 12000);
+    }, 10000);
 }
 
 function listaLivros() {
