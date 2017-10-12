@@ -41,6 +41,18 @@ Personal Notes
 
   7. Version 7: Add a simple handler to a button...
 
+  8. Version 8: Use Client Side Storage (IndexedDB) to manage Books DB...
+
+
+Useful Links
+=============
+
+   * Client Side Storage - https://www.html5rocks.com/en/tutorials/offline/storage/
+   * HTML The Living Standard - https://html.spec.whatwg.org/dev/
+   * Client-side Web APIs - https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs
+   * Mozilla MDN Wed Docs - https://developer.mozilla.org/en-US/
+   * IndexedDB API - https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API
+
 
 
 
